@@ -1,0 +1,27 @@
+﻿<Page x:Class="MasterPages.Page.MantenedorPeriodoEvaluacion"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:m="clr-namespace:MasterPages.Master"
+      Title="MantenedorPeriodoEvaluacion">
+    <m:Master>
+        <m:Master.Title>
+            Listado de los periodos de evaluación disponibles en el sistema
+        </m:Master.Title>
+        <m:Master.Content>
+            <StackPanel HorizontalAlignment="Center">
+                <Button Name="btnAgregarPeriodo" Click="btnAgregarPeriodo_Click" HorizontalAlignment="Left">Agregar Periodo</Button>
+                <DataGrid x:Name="dgPeriodo" HorizontalAlignment="Left" 
+                          VerticalAlignment="Top" Loaded="dgPeriodo_Loaded" 
+                          CanUserAddRows="False" IsReadOnly="True" 
+                          SelectedItem="{Binding Path=SelectedCustomer, Mode=TwoWay}"
+                          SelectionMode="Single">
+                </DataGrid>
+                <WrapPanel Orientation="Horizontal">
+
+                    <Button  Name="btnModificarPeriodo" Click="btnModificarPeriodo_Click">Modificar Periodo</Button>
+                    <Button  Name="btnEliminarPeriodo" Click="btnEliminarPeriodo_Click">Desactivar Periodo</Button>
+                </WrapPanel>
+            </StackPanel>
+        </m:Master.Content>
+    </m:Master>
+</Page>

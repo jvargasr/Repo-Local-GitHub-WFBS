@@ -1,0 +1,40 @@
+﻿<Page x:Class="MasterPages.Page.MantenedorHabilidades"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:m="clr-namespace:MasterPages.Master"
+    Title="MantenedorHabilidades">
+    <m:Master>
+        <m:Master.Title>
+            Listado de las habilidades disponibles en el sistema
+        </m:Master.Title>
+        <m:Master.Content>
+            <StackPanel HorizontalAlignment="Center">
+                <Button Width="210" Name="btnAgregarHabilidad" Click="btnAgregarHabilidad_Click" HorizontalAlignment="Left">Agregar Habilidad</Button>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="250" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1000" />
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="dgHabilidades" HorizontalAlignment="Left" 
+                          VerticalAlignment="Top" Loaded="dgHabilidades_Loaded" 
+                          CanUserAddRows="False" IsReadOnly="True" 
+                          SelectedItem="{Binding Path=SelectedCustomer, Mode=TwoWay}"
+                          SelectionMode="Single"
+                          AutoGenerateColumns="True"
+                          ScrollViewer.CanContentScroll="True" 
+                          ScrollViewer.VerticalScrollBarVisibility="Auto"
+                          ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                          AutoGeneratingColumn="dgHabilidades_AutoGeneratingColumn">
+                    </DataGrid>
+                </Grid>
+                <WrapPanel Orientation="Horizontal">
+                    <Button  Name="btnModificarHabilidad" Click="btnModificarHabilidad_Click">Modificar Habilidad</Button>
+                    <Button  Name="btnEliminarHabilidad" Click="btnEliminarHabilidad_Click">Eliminar Habilidad</Button>
+                    <Button  Name="btnVolver" Click="btnVolver_Click">Volver</Button>
+                </WrapPanel>
+            </StackPanel>
+        </m:Master.Content>
+    </m:Master>
+</Page>

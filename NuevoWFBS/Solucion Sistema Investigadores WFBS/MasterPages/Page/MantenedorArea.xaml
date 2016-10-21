@@ -1,0 +1,27 @@
+﻿<Page x:Class="MasterPages.Page.MantenedorArea"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:m="clr-namespace:MasterPages.Master"
+      Title="MantenedorArea">
+    <m:Master>
+        <m:Master.Title>
+            Listado de las Áreas disponibles en el sistema
+        </m:Master.Title>
+        <m:Master.Content>
+            <StackPanel HorizontalAlignment="Center">
+                <Button Name="btnAgregarArea" Click="btnAgregarArea_Click" HorizontalAlignment="Left">Agregar Area</Button>
+                <DataGrid x:Name="dgArea" HorizontalAlignment="Left" 
+                          VerticalAlignment="Top" Loaded="dgArea_Loaded" 
+                          CanUserAddRows="False" IsReadOnly="True" 
+                          SelectedItem="{Binding Path=SelectedCustomer, Mode=TwoWay}"
+                          SelectionMode="Single">
+                </DataGrid>
+                <WrapPanel Orientation="Horizontal">
+
+                    <Button  Name="btnModificarArea" Click="btnModificarArea_Click">Modificar Área</Button>
+                    <Button  Name="btnEliminarArea" Click="btnEliminarArea_Click">Desactivar Área</Button>
+                </WrapPanel>
+            </StackPanel>
+        </m:Master.Content>
+    </m:Master>
+</Page>

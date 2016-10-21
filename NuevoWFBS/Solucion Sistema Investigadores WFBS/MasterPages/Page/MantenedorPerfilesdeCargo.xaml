@@ -1,0 +1,43 @@
+﻿<Page x:Class="MasterPages.Page.MantenedorPerfilesdeCargo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:m="clr-namespace:MasterPages.Master"
+    Title="MantenedorPerfilesdeCargo">
+    <m:Master>
+        <m:Master.Title>
+            Listado de los perfiles de cargo en el sistema
+        </m:Master.Title>
+        <m:Master.Content>
+
+            <StackPanel HorizontalAlignment="Center" >
+                <Button Name="btnAgregarPerfildeCargo" Click="btnAgregaPerfildeCargo_Click" HorizontalAlignment="Left">Crear perfil de Cargo</Button>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="250" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1000" />
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="dgPerfildeCargo" HorizontalAlignment="Left" 
+                          VerticalAlignment="Top" Loaded="dgPerfildeCargo_Loaded" 
+                          CanUserAddRows="False" IsReadOnly="True" 
+                          SelectedItem="{Binding Path=SelectedCustomer, Mode=TwoWay}"
+                          SelectionMode="Single"
+                          AutoGenerateColumns="True"
+                          AutoGeneratingColumn="dgPerfildeCargo_AutoGeneratingColumn"
+                          ScrollViewer.CanContentScroll="True" 
+                          ScrollViewer.VerticalScrollBarVisibility="Auto"
+                          ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                              Width="600">
+                    </DataGrid>
+                </Grid>
+                <WrapPanel Orientation="Horizontal">
+                    <Button  Name="btnModificarPerfildeCargo" Click="btnModificarPerfildeCargo_Click">Modificar Perfil de Cargo</Button>
+                    <Button  Name="btnEliminarPerfildeCargo" Click="btnEliminarPerfildeCargo_Click">Desactivar Perfil de Cargo</Button>
+                </WrapPanel>
+            </StackPanel>
+
+        </m:Master.Content>
+    </m:Master>
+</Page>
+
